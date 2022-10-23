@@ -1,4 +1,5 @@
 import React from "react";
+import '../stylesheets/Boton.css';
 
 const esOperador = valor =>{
     return isNaN(valor) && (valor != '.') && (valor != '=');
@@ -7,7 +8,7 @@ const esOperador = valor =>{
 //prop estructurado
 function Boton(props){
     return(
-        <div className = {`boton-contenedor ${esOperador(props.children) ? 'operador' : null}`} >
+        <div className = {`boton-contenedor ${esOperador(props.children) ? 'operador' : ''}`.trimEnd()} >
             {props.children}
         </div>
     );
